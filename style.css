@@ -1,6 +1,7 @@
-/* ================================
+
+/* =================================
    GLOBAL
-================================ */
+================================= */
 
 * {
     margin: 0;
@@ -23,14 +24,16 @@ html {
 }
 
 body {
-    background-color: var(--bg);
+    background: var(--bg);
     color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     padding: 40px 20px;
+
     background-image:
         linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+
     background-size: 45px 45px;
 }
 
@@ -38,29 +41,34 @@ body {
     width: 100%;
     max-width: 1100px;
     margin: auto;
+    padding: 55px;
     background: var(--bg);
     border: 1px solid var(--border);
-    padding: 55px;
+    border-radius: 12px;
     overflow: hidden;
 }
 
 
-/* ================================
+/* =================================
    HEADER
-================================ */
+================================= */
 
 .hero {
     position: relative;
+
     display: grid;
-    grid-template-columns: 1.5fr 0.8fr;
+    grid-template-columns: minmax(0, 1fr) 220px;
     align-items: center;
-    gap: 50px;
-    min-height: 390px;
-    padding-bottom: 55px;
+    gap: 40px;
+
+    min-height: 370px;
+    padding: 10px 0 55px;
+
     border-bottom: 1px solid var(--border);
 }
 
 .hero-text {
+    min-width: 0;
     position: relative;
     z-index: 2;
 }
@@ -87,8 +95,8 @@ body {
 .subtitle {
     color: #bdbdbd;
     font-size: 15px;
-    margin-top: 25px;
     letter-spacing: 1px;
+    margin-top: 25px;
 }
 
 .accent-line {
@@ -99,7 +107,7 @@ body {
 }
 
 .hero-description {
-    max-width: 350px;
+    max-width: 380px;
     color: var(--gray);
     font-size: 14px;
     line-height: 1.8;
@@ -107,71 +115,83 @@ body {
 
 .profile-photo {
     position: relative;
+
     width: 100%;
-    max-width: 270px;
-    height: 330px;
-    justify-self: end;
+    max-width: 190px;
+    height: 250px;
+
+    justify-self: center;
+
     background: var(--card-light);
     border: 1px solid #383838;
-    padding: 9px;
+    border-radius: 7px;
+    padding: 7px;
 }
 
 .profile-photo img {
+    display: block;
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: cover;
     object-position: center;
+    border-radius: 4px;
 }
 
 .photo-label {
     position: absolute;
-    bottom: -28px;
+    bottom: -25px;
     right: 0;
+
     color: var(--gray);
     font-size: 9px;
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 .hero-number {
     position: absolute;
     bottom: 20px;
-    left: 0;
+    right: 0;
+
     color: var(--muted);
     font-size: 10px;
     letter-spacing: 3px;
 }
 
 
-/* ================================
+/* =================================
    INTRODUCTION
-================================ */
+================================= */
 
 .intro-section {
-    padding: 45px 0;
+    padding: 40px 25px;
     border-bottom: 1px solid var(--border);
 }
 
 .section-heading {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
     color: var(--muted);
     font-size: 10px;
     font-weight: bold;
     letter-spacing: 3px;
-    margin-bottom: 30px;
+
+    margin-bottom: 28px;
 }
 
 .intro-content {
     display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    grid-template-columns: 0.75fr 1.25fr;
     align-items: center;
-    gap: 40px;
+    gap: 35px;
 }
 
 .intro-content h2 {
-    font-size: 42px;
-    line-height: 1.05;
+    font-size: 40px;
+    line-height: 1.1;
     letter-spacing: -2px;
 }
 
@@ -180,16 +200,16 @@ body {
 }
 
 .intro-content p {
+    max-width: 520px;
     color: #aaa;
     font-size: 14px;
-    line-height: 2;
-    max-width: 520px;
+    line-height: 1.9;
 }
 
 
-/* ================================
+/* =================================
    MAIN CONTENT
-================================ */
+================================= */
 
 .content-grid {
     display: grid;
@@ -207,14 +227,17 @@ body {
 
 .section {
     width: 100%;
+    min-width: 0;
 }
 
 .section-title {
     display: flex;
     align-items: center;
     gap: 15px;
+
     padding-bottom: 17px;
     margin-bottom: 25px;
+
     border-bottom: 1px solid var(--border);
 }
 
@@ -231,9 +254,9 @@ body {
 }
 
 
-/* ================================
+/* =================================
    PERSONAL INFORMATION
-================================ */
+================================= */
 
 .detail {
     margin-bottom: 22px;
@@ -255,20 +278,22 @@ body {
 }
 
 
-/* ================================
+/* =================================
    HOBBIES
-================================ */
+================================= */
 
 .hobby {
     display: flex;
     align-items: center;
     gap: 12px;
+
     color: #dedede;
     font-size: 14px;
     margin-bottom: 15px;
 }
 
 .hobby-dot {
+    flex-shrink: 0;
     width: 7px;
     height: 7px;
     background: var(--white);
@@ -276,13 +301,14 @@ body {
 }
 
 
-/* ================================
+/* =================================
    ORGANIZATION
-================================ */
+================================= */
 
 .item {
     background: var(--card);
     border: 1px solid var(--border);
+    border-radius: 9px;
     padding: 25px;
 }
 
@@ -290,8 +316,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
     flex-wrap: wrap;
+    gap: 15px;
     margin-bottom: 15px;
 }
 
@@ -303,6 +329,7 @@ body {
 .tag {
     color: var(--gray);
     border: 1px solid var(--border);
+    border-radius: 20px;
     padding: 5px 9px;
     font-size: 9px;
     letter-spacing: 1px;
@@ -315,9 +342,9 @@ body {
 }
 
 
-/* ================================
+/* =================================
    SKILLS
-================================ */
+================================= */
 
 .skill-list {
     display: flex;
@@ -329,8 +356,11 @@ body {
     color: #dedede;
     background: var(--card-light);
     border: 1px solid var(--border);
+    border-radius: 6px;
+
     padding: 10px 14px;
     font-size: 12px;
+
     transition: 0.25s ease;
 }
 
@@ -347,13 +377,14 @@ body {
 }
 
 
-/* ================================
+/* =================================
    PERSONAL NOTE
-================================ */
+================================= */
 
 .quote-section {
     background: var(--card);
     border-left: 3px solid var(--white);
+    border-radius: 0 8px 8px 0;
     padding: 25px;
 }
 
@@ -379,15 +410,16 @@ body {
 }
 
 
-/* ================================
+/* =================================
    FOOTER
-================================ */
+================================= */
 
 footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     gap: 20px;
+
     padding-top: 25px;
     border-top: 1px solid var(--border);
 }
@@ -418,9 +450,9 @@ footer {
 }
 
 
-/* ================================
-   RESPONSIVE TABLET
-================================ */
+/* =================================
+   TABLET
+================================= */
 
 @media (max-width: 800px) {
 
@@ -434,7 +466,7 @@ footer {
 
     .hero {
         gap: 25px;
-        grid-template-columns: 1.2fr 0.8fr;
+        grid-template-columns: minmax(0, 1fr) 180px;
     }
 
     .hero h1 {
@@ -442,7 +474,8 @@ footer {
     }
 
     .profile-photo {
-        height: 280px;
+        max-width: 165px;
+        height: 220px;
     }
 
     .content-grid {
@@ -452,9 +485,9 @@ footer {
 }
 
 
-/* ================================
-   RESPONSIVE MOBILE
-================================ */
+/* =================================
+   MOBILE
+================================= */
 
 @media (max-width: 600px) {
 
@@ -464,59 +497,100 @@ footer {
     }
 
     .resume {
-        padding: 28px 22px;
+        padding: 28px 20px;
         border: none;
+        border-radius: 0;
     }
+
+    /* Header */
 
     .hero {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding-bottom: 50px;
-    }
+        grid-template-columns: minmax(0, 1fr) 120px;
+        align-items: center;
+        gap: 14px;
 
-    .hero h1 {
-        font-size: clamp(58px, 15vw, 78px);
-        letter-spacing: -3px;
+        min-height: 0;
+        padding: 15px 0 55px;
     }
 
     .eyebrow {
-        font-size: 9px;
-        letter-spacing: 3px;
+        font-size: 8px;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: clamp(35px, 10vw, 53px);
+        letter-spacing: -2px;
+        overflow-wrap: normal;
+    }
+
+    .subtitle {
+        font-size: 11px;
+        margin-top: 15px;
+        letter-spacing: 0;
+    }
+
+    .accent-line {
+        width: 45px;
+        margin: 18px 0;
+    }
+
+    .hero-description {
+        font-size: 11px;
+        line-height: 1.7;
     }
 
     .profile-photo {
-        width: 75%;
-        max-width: 260px;
-        height: 300px;
-        justify-self: start;
+        width: 120px;
+        height: 165px;
+        padding: 5px;
+    }
+
+    .photo-label {
+        font-size: 7px;
+        letter-spacing: 1px;
+        bottom: -22px;
     }
 
     .hero-number {
         bottom: 15px;
+        font-size: 8px;
     }
 
+    /* Introduction */
+
     .intro-section {
-        padding: 35px 0;
+        padding: 32px 5px;
     }
 
     .section-heading {
         font-size: 8px;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
+        margin-bottom: 22px;
     }
 
     .intro-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 15px;
     }
 
     .intro-content h2 {
-        font-size: 36px;
+        font-size: 29px;
+        letter-spacing: -1px;
     }
+
+    .intro-content p {
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+    /* Main content */
 
     .content-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
-        padding: 40px 0;
+        gap: 40px;
+        padding: 35px 0;
     }
 
     .side-column,
@@ -536,6 +610,8 @@ footer {
         font-size: 18px;
     }
 
+    /* Footer */
+
     footer {
         flex-direction: column;
         align-items: flex-start;
@@ -548,23 +624,41 @@ footer {
 }
 
 
-/* ================================
-   SMALL MOBILE
-================================ */
+/* =================================
+   VERY SMALL MOBILE
+================================= */
 
 @media (max-width: 360px) {
 
     .resume {
-        padding: 25px 17px;
+        padding: 25px 16px;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr) 100px;
+        gap: 10px;
     }
 
     .hero h1 {
-        font-size: 53px;
+        font-size: 36px;
     }
 
     .profile-photo {
-        width: 85%;
-        height: 270px;
+        width: 100px;
+        height: 140px;
+    }
+
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .intro-content h2 {
+        font-size: 30px;
+    }
+
+    .intro-content p {
+        font-size: 12px;
     }
 
     .item-top {
@@ -575,9 +669,9 @@ footer {
 }
 
 
-/* ================================
+/* =================================
    PRINT
-================================ */
+================================= */
 
 @media print {
 
@@ -598,137 +692,6 @@ footer {
     .content-grid,
     footer {
         break-inside: avoid;
-    }
-
-}
-/* ================================
-   HEADER & PHOTO FIX
-================================ */
-
-.hero {
-    grid-template-columns: minmax(0, 1fr) 220px;
-    align-items: center;
-    gap: 35px;
-}
-
-.profile-photo {
-    width: 100%;
-    max-width: 190px;
-    height: 250px;
-    justify-self: center;
-    padding: 7px;
-}
-
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.photo-label {
-    bottom: -25px;
-    right: 0;
-    white-space: nowrap;
-}
-
-.hero-number {
-    right: 0;
-    left: auto;
-}
-
-
-/* ================================
-   INTRODUCTION FIX
-================================ */
-
-.intro-section {
-    padding: 40px 28px;
-}
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 28px;
-}
-
-.intro-content {
-    display: grid;
-    grid-template-columns: 0.7fr 1.3fr;
-    align-items: center;
-    gap: 30px;
-}
-
-.intro-content h2 {
-    font-size: 36px;
-    line-height: 1.15;
-}
-
-.intro-content p {
-    max-width: 100%;
-    line-height: 1.9;
-}
-
-
-/* ================================
-   MOBILE FIX
-================================ */
-
-@media (max-width: 600px) {
-
-    .hero {
-        grid-template-columns: minmax(0, 1fr) 125px;
-        gap: 15px;
-    }
-
-    .profile-photo {
-        width: 125px;
-        height: 165px;
-    }
-
-    .hero h1 {
-        font-size: clamp(38px, 10vw, 58px);
-        letter-spacing: -2px;
-    }
-
-    .hero-number {
-        font-size: 9px;
-    }
-
-    .intro-section {
-        padding: 35px 12px;
-    }
-
-    .intro-content {
-        grid-template-columns: 0.75fr 1.25fr;
-        gap: 18px;
-    }
-
-    .intro-content h2 {
-        font-size: 29px;
-    }
-
-    .intro-content p {
-        font-size: 12px;
-    }
-
-}
-
-@media (max-width: 360px) {
-
-    .hero {
-        grid-template-columns: minmax(0, 1fr) 105px;
-    }
-
-    .profile-photo {
-        width: 105px;
-        height: 145px;
-    }
-
-    .intro-content {
-        grid-template-columns: 1fr;
-        gap: 12px;
     }
 
 }
