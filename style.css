@@ -1,10 +1,6 @@
-/* =========================================
-   ZULFAN FIRDAUS - CURRICULUM VITAE
-   DESIGN: DARK EXECUTIVE / MODERN TECH
-========================================= */
-
-
-/* ===== 01. RESET & VARIABLES ===== */
+/* ================================
+   GLOBAL
+================================ */
 
 * {
     margin: 0;
@@ -14,698 +10,594 @@
 
 :root {
     --bg: #080808;
-    --card: #101010;
+    --card: #111111;
     --card-light: #171717;
-    --card-hover: #1d1d1d;
-
-    --white: #ffffff;
-    --text: #d8d8d8;
-    --muted: #888888;
-
+    --white: #f5f5f5;
+    --gray: #929292;
+    --muted: #626262;
     --border: #292929;
-    --border-light: #3a3a3a;
-
-    --accent: #f5f5f5;
-
-    --radius: 12px;
 }
 
-
-/* ===== 02. BODY ===== */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
-    min-height: 100vh;
-    padding: 45px 20px;
-
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.7;
-
-    color: var(--text);
     background-color: var(--bg);
-
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
     background-image:
-        linear-gradient(
-            rgba(255, 255, 255, 0.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.025) 1px,
-            transparent 1px
-        );
-
-    background-size: 38px 38px;
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 45px 45px;
 }
-
-
-/* ===== 03. MAIN CONTAINER ===== */
 
 .resume {
     width: 100%;
-    max-width: 1050px;
-
-    margin: 0 auto;
-
-    background: var(--card);
-
+    max-width: 1100px;
+    margin: auto;
+    background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 15px;
-
+    padding: 55px;
     overflow: hidden;
-
-    box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.55),
-        0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 
-/* ===== 04. HERO SECTION ===== */
+/* ================================
+   HEADER
+================================ */
 
 .hero {
     position: relative;
-
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
     align-items: center;
-
-    gap: 38px;
-
-    padding: 48px;
-
-    background:
-        radial-gradient(
-            circle at top right,
-            rgba(255, 255, 255, 0.055),
-            transparent 40%
-        ),
-        #0d0d0d;
-
+    gap: 50px;
+    min-height: 390px;
+    padding-bottom: 55px;
     border-bottom: 1px solid var(--border);
 }
 
-
-/* Decorative line */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 2px;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #ffffff,
-        transparent
-    );
-
-    opacity: 0.35;
-}
-
-
-/* ===== PROFILE PHOTO ===== */
-
-.profile-photo {
-    position: relative;
-    flex-shrink: 0;
-}
-
-.profile-photo::after {
-    content: "";
-
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    top: 9px;
-    left: 9px;
-
-    border: 1px solid #555555;
-    border-radius: 11px;
-
-    z-index: 0;
-}
-
-.profile-photo img {
-    position: relative;
-    z-index: 1;
-
-    display: block;
-
-    width: 180px;
-    height: 215px;
-
-    object-fit: cover;
-    object-position: center;
-
-    border: 1px solid #555555;
-    border-radius: 10px;
-
-    background: #1a1a1a;
-
-    transition: transform 0.3s ease;
-}
-
-.profile-photo img:hover {
-    transform: translateY(-4px);
-}
-
-
-/* ===== HERO TEXT ===== */
-
 .hero-text {
-    flex: 1;
-    min-width: 0;
+    position: relative;
+    z-index: 2;
 }
 
 .eyebrow {
-    display: inline-block;
-
-    color: #999999;
-
+    color: var(--gray);
     font-size: 11px;
     font-weight: bold;
-
     letter-spacing: 4px;
-
-    margin-bottom: 12px;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    color: var(--white);
+    font-size: clamp(55px, 8vw, 95px);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
 
-    font-size: 42px;
-    font-weight: 700;
-
-    line-height: 1.2;
-    letter-spacing: -1.5px;
-
-    margin-bottom: 10px;
+.hero h1 span {
+    color: var(--gray);
 }
 
 .subtitle {
-    color: #aaaaaa;
-
-    font-size: 14px;
+    color: #bdbdbd;
+    font-size: 15px;
+    margin-top: 25px;
     letter-spacing: 1px;
 }
 
 .accent-line {
     width: 65px;
     height: 3px;
-
-    margin: 22px 0;
-
     background: var(--white);
-
-    border-radius: 10px;
+    margin: 25px 0;
 }
 
-.intro {
-    max-width: 550px;
-
-    color: #bdbdbd;
-
+.hero-description {
+    max-width: 350px;
+    color: var(--gray);
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 1.8;
 }
 
-
-/* ===== 05. CONTENT LAYOUT ===== */
-
-.content-grid {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.7fr)
-        minmax(250px, 1fr);
-
-    gap: 38px;
-
-    padding: 42px 48px;
-
-    align-items: start;
+.profile-photo {
+    position: relative;
+    width: 100%;
+    max-width: 270px;
+    height: 330px;
+    justify-self: end;
+    background: var(--card-light);
+    border: 1px solid #383838;
+    padding: 9px;
 }
 
-.main-column,
-.side-column {
-    min-width: 0;
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }
 
-
-/* ===== 06. SECTION ===== */
-
-.section {
-    margin-bottom: 35px;
-}
-
-.section:last-child {
-    margin-bottom: 0;
-}
-
-.section h2 {
-    display: flex;
-    align-items: center;
-
-    gap: 13px;
-
-    color: var(--white);
-
-    font-size: 17px;
-    font-weight: 600;
-
-    margin-bottom: 20px;
-    padding-bottom: 13px;
-
-    border-bottom: 1px solid var(--border);
-}
-
-.section h2 span {
-    color: #777777;
-
-    font-size: 11px;
-    font-weight: bold;
-
+.photo-label {
+    position: absolute;
+    bottom: -28px;
+    right: 0;
+    color: var(--gray);
+    font-size: 9px;
     letter-spacing: 2px;
 }
 
-.section > p,
-.item > p {
-    color: #bdbdbd;
-
-    font-size: 14px;
-    line-height: 1.9;
+.hero-number {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 3px;
 }
 
 
-/* ===== 07. ORGANIZATION EXPERIENCE ===== */
+/* ================================
+   INTRODUCTION
+================================ */
+
+.intro-section {
+    padding: 45px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.intro-content h2 {
+    font-size: 42px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.intro-content h2 span {
+    color: var(--gray);
+}
+
+.intro-content p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 2;
+    max-width: 520px;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 0.85fr 1.4fr;
+    gap: 55px;
+    padding: 50px 0;
+}
+
+.side-column,
+.main-column {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.section {
+    width: 100%;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 17px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+}
+
+.number {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.section-title h2 {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* ================================
+   PERSONAL INFORMATION
+================================ */
+
+.detail {
+    margin-bottom: 22px;
+}
+
+.label {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.detail p:not(.label) {
+    color: #dedede;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ================================
+   HOBBIES
+================================ */
+
+.hobby {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #dedede;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.hobby-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--white);
+    border-radius: 50%;
+}
+
+
+/* ================================
+   ORGANIZATION
+================================ */
 
 .item {
-    padding: 20px;
-
-    background: var(--card-light);
-
+    background: var(--card);
     border: 1px solid var(--border);
-    border-radius: var(--radius);
-
-    transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.item:hover {
-    background: var(--card-hover);
-
-    border-color: var(--border-light);
-
-    transform: translateY(-3px);
+    padding: 25px;
 }
 
 .item-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    gap: 15px;
     flex-wrap: wrap;
-    gap: 12px;
-
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .item h3 {
-    color: var(--white);
-
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 25px;
+    letter-spacing: 1px;
 }
 
 .tag {
-    padding: 5px 11px;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    padding: 5px 9px;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
 
-    color: #d0d0d0;
-
-    background: #202020;
-
-    border: 1px solid #3a3a3a;
-    border-radius: 20px;
-
-    font-size: 10px;
-    letter-spacing: 0.5px;
+.item > p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.9;
 }
 
 
-/* ===== 08. SKILLS ===== */
+/* ================================
+   SKILLS
+================================ */
 
 .skill-list {
     display: flex;
     flex-wrap: wrap;
-
     gap: 10px;
-
-    margin-bottom: 16px;
 }
 
 .skill {
-    display: inline-block;
-
-    padding: 8px 13px;
-
-    color: #dddddd;
-
-    background: #191919;
-
-    border: 1px solid #363636;
-    border-radius: 7px;
-
+    color: #dedede;
+    background: var(--card-light);
+    border: 1px solid var(--border);
+    padding: 10px 14px;
     font-size: 12px;
-
     transition: 0.25s ease;
 }
 
 .skill:hover {
-    color: #080808;
-
-    background: #ffffff;
-
-    border-color: #ffffff;
-
-    transform: translateY(-2px);
+    background: var(--white);
+    color: var(--bg);
 }
 
 .small-note {
-    color: var(--muted) !important;
-
-    font-size: 12px !important;
-    line-height: 1.8 !important;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.8;
+    margin-top: 18px;
 }
 
 
-/* ===== 09. PERSONAL INFORMATION ===== */
+/* ================================
+   PERSONAL NOTE
+================================ */
 
-.detail {
-    padding: 15px 16px;
-
-    margin-bottom: 12px;
-
-    background: var(--card-light);
-
-    border: 1px solid var(--border);
-    border-radius: 9px;
-
-    overflow-wrap: anywhere;
-
-    transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
+.quote-section {
+    background: var(--card);
+    border-left: 3px solid var(--white);
+    padding: 25px;
 }
 
-.detail:hover {
-    background: var(--card-hover);
-
-    border-color: var(--border-light);
-
-    transform: translateX(4px);
-}
-
-.detail .label {
-    color: #858585;
-
-    font-size: 10px;
+.quote-label {
+    color: var(--muted);
+    font-size: 9px;
     font-weight: bold;
-
-    text-transform: uppercase;
-    letter-spacing: 1.7px;
-
-    margin-bottom: 5px;
+    letter-spacing: 3px;
 }
 
-.detail p:last-child {
-    color: #eeeeee;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    line-height: 1.7;
+.quote-section p {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 20px 0;
 }
 
-
-/* ===== 10. HOBBIES ===== */
-
-.hobby {
-    display: flex;
-    align-items: center;
-
-    gap: 13px;
-
-    padding: 14px 16px;
-
-    margin-bottom: 11px;
-
-    color: #dddddd;
-
-    background: var(--card-light);
-
-    border: 1px solid var(--border);
-    border-radius: 9px;
-
-    font-size: 14px;
-
-    transition: 0.25s ease;
-}
-
-.hobby:hover {
-    background: var(--card-hover);
-
-    border-color: var(--border-light);
-
-    transform: translateX(4px);
-}
-
-.hobby-dot {
-    width: 7px;
-    height: 7px;
-
-    flex-shrink: 0;
-
-    background: #ffffff;
-
-    border-radius: 50%;
-
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+.quote-footer {
+    color: var(--gray);
+    font-size: 9px;
+    letter-spacing: 2px;
 }
 
 
-/* ===== 11. FOOTER ===== */
+/* ================================
+   FOOTER
+================================ */
 
 footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
-    flex-wrap: wrap;
-    gap: 12px;
-
-    padding: 22px 48px;
-
-    background: #090909;
-
+    align-items: flex-end;
+    gap: 20px;
+    padding-top: 25px;
     border-top: 1px solid var(--border);
+}
 
-    color: #777777;
+.footer-left,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
-    font-size: 10px;
-    font-weight: 600;
-
+.footer-name {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: bold;
     letter-spacing: 2px;
 }
 
-footer span:first-child {
-    color: #eeeeee;
+.footer-description,
+.footer-right span {
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.footer-right {
+    text-align: right;
 }
 
 
-/* ===== 12. TABLET ===== */
+/* ================================
+   RESPONSIVE TABLET
+================================ */
 
-@media (max-width: 850px) {
-
-    .content-grid {
-        grid-template-columns: 1.4fr 1fr;
-
-        gap: 25px;
-
-        padding: 35px 30px;
-    }
-
-    .hero {
-        padding: 38px 30px;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    footer {
-        padding: 20px 30px;
-    }
-}
-
-
-/* ===== 13. MOBILE ===== */
-
-@media (max-width: 650px) {
+@media (max-width: 800px) {
 
     body {
-        padding: 15px 10px;
+        padding: 20px 12px;
     }
 
     .resume {
-        border-radius: 11px;
+        padding: 35px;
     }
 
     .hero {
-        flex-direction: column;
-
-        text-align: center;
-
         gap: 25px;
-
-        padding: 35px 22px;
-    }
-
-    .profile-photo img {
-        width: 150px;
-        height: 180px;
+        grid-template-columns: 1.2fr 0.8fr;
     }
 
     .hero h1 {
-        font-size: 31px;
-        letter-spacing: -0.8px;
+        font-size: 65px;
+    }
 
-        overflow-wrap: anywhere;
+    .profile-photo {
+        height: 280px;
+    }
+
+    .content-grid {
+        gap: 30px;
+    }
+
+}
+
+
+/* ================================
+   RESPONSIVE MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0;
+        background-size: 30px 30px;
+    }
+
+    .resume {
+        padding: 28px 22px;
+        border: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-bottom: 50px;
+    }
+
+    .hero h1 {
+        font-size: clamp(58px, 15vw, 78px);
+        letter-spacing: -3px;
     }
 
     .eyebrow {
-        font-size: 10px;
+        font-size: 9px;
         letter-spacing: 3px;
     }
 
-    .accent-line {
-        margin: 20px auto;
+    .profile-photo {
+        width: 75%;
+        max-width: 260px;
+        height: 300px;
+        justify-self: start;
     }
 
-    .intro {
-        font-size: 13px;
+    .hero-number {
+        bottom: 15px;
+    }
+
+    .intro-section {
+        padding: 35px 0;
+    }
+
+    .section-heading {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .intro-content h2 {
+        font-size: 36px;
     }
 
     .content-grid {
         grid-template-columns: 1fr;
-
-        gap: 35px;
-
-        padding: 30px 22px;
+        gap: 45px;
+        padding: 40px 0;
     }
 
-    .section h2 {
+    .side-column,
+    .main-column {
+        gap: 35px;
+    }
+
+    .section-title h2 {
         font-size: 16px;
     }
 
     .item {
-        padding: 16px;
+        padding: 20px;
+    }
+
+    .quote-section p {
+        font-size: 18px;
     }
 
     footer {
         flex-direction: column;
-
-        text-align: center;
-
-        padding: 20px;
+        align-items: flex-start;
     }
+
+    .footer-right {
+        text-align: left;
+    }
+
 }
 
 
-/* ===== 14. SMALL MOBILE ===== */
+/* ================================
+   SMALL MOBILE
+================================ */
 
 @media (max-width: 360px) {
 
-    body {
-        padding: 10px 7px;
-    }
-
-    .hero {
-        padding: 28px 16px;
+    .resume {
+        padding: 25px 17px;
     }
 
     .hero h1 {
-        font-size: 27px;
+        font-size: 53px;
     }
 
-    .content-grid {
-        padding: 25px 16px;
-    }
-
-    .skill {
-        font-size: 11px;
-        padding: 7px 10px;
+    .profile-photo {
+        width: 85%;
+        height: 270px;
     }
 
     .item-top {
         align-items: flex-start;
         flex-direction: column;
     }
+
 }
 
 
-/* ===== 15. PRINT ===== */
+/* ================================
+   PRINT
+================================ */
 
 @media print {
 
     body {
+        background: white;
+        color: black;
         padding: 0;
-
-        color: #222222;
-        background: #ffffff;
     }
 
     .resume {
         max-width: 100%;
-
         border: none;
-        border-radius: 0;
-
-        box-shadow: none;
+        padding: 20px;
     }
 
-    .hero {
-        background: #111111 !important;
-
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
-
-    .profile-photo img {
-        filter: none;
-    }
-
-    .content-grid {
-        gap: 20px;
-    }
-
-    .item,
-    .detail,
-    .hobby {
+    .hero,
+    .intro-section,
+    .content-grid,
+    footer {
         break-inside: avoid;
     }
 
-    .skill,
-    .tag {
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-    }
 }
