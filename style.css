@@ -1,4 +1,11 @@
-/* ===== RESET ===== */
+/* =========================================
+   ZULFAN FIRDAUS - CURRICULUM VITAE
+   DESIGN: DARK EXECUTIVE / MODERN TECH
+========================================= */
+
+
+/* ===== 01. RESET & VARIABLES ===== */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,71 +15,168 @@
 :root {
     --bg: #080808;
     --card: #101010;
-    --surface: #161616;
-    --white: #f5f5f5;
-    --text: #d4d4d4;
-    --muted: #777777;
+    --card-light: #171717;
+    --card-hover: #1d1d1d;
+
+    --white: #ffffff;
+    --text: #d8d8d8;
+    --muted: #888888;
+
     --border: #292929;
-    --accent: #ffffff;
+    --border-light: #3a3a3a;
+
+    --accent: #f5f5f5;
+
+    --radius: 12px;
 }
 
-/* ===== BODY ===== */
+
+/* ===== 02. BODY ===== */
+
 body {
+    min-height: 100vh;
+    padding: 45px 20px;
+
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--bg);
-    background-image:
-        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 35px 35px;
+    line-height: 1.7;
 
     color: var(--text);
-    line-height: 1.7;
-    padding: 40px 20px;
+    background-color: var(--bg);
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 38px 38px;
 }
 
-/* ===== MAIN RESUME ===== */
+
+/* ===== 03. MAIN CONTAINER ===== */
+
 .resume {
-    max-width: 1000px;
+    width: 100%;
+    max-width: 1050px;
+
     margin: 0 auto;
+
     background: var(--card);
+
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 15px;
+
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-/* ===== HERO ===== */
+
+/* ===== 04. HERO SECTION ===== */
+
 .hero {
+    position: relative;
+
     display: flex;
     align-items: center;
-    gap: 35px;
-    padding: 45px;
-    background: #0b0b0b;
+
+    gap: 38px;
+
+    padding: 48px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 255, 255, 0.055),
+            transparent 40%
+        ),
+        #0d0d0d;
+
     border-bottom: 1px solid var(--border);
 }
 
+
+/* Decorative line */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ffffff,
+        transparent
+    );
+
+    opacity: 0.35;
+}
+
+
+/* ===== PROFILE PHOTO ===== */
+
 .profile-photo {
-    flex-shrink: 0;
     position: relative;
+    flex-shrink: 0;
+}
+
+.profile-photo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 9px;
+    left: 9px;
+
+    border: 1px solid #555555;
+    border-radius: 11px;
+
+    z-index: 0;
 }
 
 .profile-photo img {
+    position: relative;
+    z-index: 1;
+
     display: block;
-    width: 175px;
-    height: 210px;
+
+    width: 180px;
+    height: 215px;
+
     object-fit: cover;
     object-position: center;
-    border: 2px solid #444;
+
+    border: 1px solid #555555;
     border-radius: 10px;
-    filter: grayscale(100%);
-    transition: 0.3s ease;
+
+    background: #1a1a1a;
+
+    transition: transform 0.3s ease;
 }
 
 .profile-photo img:hover {
-    filter: grayscale(0%);
-    border-color: white;
-    transform: scale(1.02);
+    transform: translateY(-4px);
 }
+
+
+/* ===== HERO TEXT ===== */
 
 .hero-text {
     flex: 1;
@@ -80,47 +184,71 @@ body {
 }
 
 .eyebrow {
-    color: var(--muted);
+    display: inline-block;
+
+    color: #999999;
+
     font-size: 11px;
     font-weight: bold;
+
     letter-spacing: 4px;
-    margin-bottom: 10px;
+
+    margin-bottom: 12px;
 }
 
 .hero h1 {
     color: var(--white);
-    font-size: 40px;
+
+    font-size: 42px;
+    font-weight: 700;
+
     line-height: 1.2;
-    margin-bottom: 8px;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
+
+    margin-bottom: 10px;
 }
 
 .subtitle {
-    color: #999;
+    color: #aaaaaa;
+
     font-size: 14px;
     letter-spacing: 1px;
 }
 
 .accent-line {
-    width: 55px;
+    width: 65px;
     height: 3px;
-    background: white;
-    border-radius: 5px;
-    margin: 20px 0;
+
+    margin: 22px 0;
+
+    background: var(--white);
+
+    border-radius: 10px;
 }
 
 .intro {
-    color: #b5b5b5;
+    max-width: 550px;
+
+    color: #bdbdbd;
+
     font-size: 14px;
-    max-width: 540px;
+    line-height: 1.9;
 }
 
-/* ===== CONTENT GRID ===== */
+
+/* ===== 05. CONTENT LAYOUT ===== */
+
 .content-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.7fr) minmax(240px, 1fr);
-    gap: 35px;
-    padding: 40px 45px;
+
+    grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(250px, 1fr);
+
+    gap: 38px;
+
+    padding: 42px 48px;
+
     align-items: start;
 }
 
@@ -129,9 +257,11 @@ body {
     min-width: 0;
 }
 
-/* ===== SECTION ===== */
+
+/* ===== 06. SECTION ===== */
+
 .section {
-    margin-bottom: 32px;
+    margin-bottom: 35px;
 }
 
 .section:last-child {
@@ -141,238 +271,441 @@ body {
 .section h2 {
     display: flex;
     align-items: center;
-    gap: 12px;
+
+    gap: 13px;
+
     color: var(--white);
+
     font-size: 17px;
     font-weight: 600;
-    margin-bottom: 18px;
-    padding-bottom: 12px;
+
+    margin-bottom: 20px;
+    padding-bottom: 13px;
+
     border-bottom: 1px solid var(--border);
 }
 
 .section h2 span {
-    color: #777;
+    color: #777777;
+
     font-size: 11px;
-    letter-spacing: 2px;
     font-weight: bold;
+
+    letter-spacing: 2px;
 }
 
 .section > p,
 .item > p {
     color: #bdbdbd;
+
     font-size: 14px;
+    line-height: 1.9;
 }
 
-/* ===== ORGANIZATION EXPERIENCE ===== */
+
+/* ===== 07. ORGANIZATION EXPERIENCE ===== */
+
 .item {
-    padding: 18px;
-    background: var(--surface);
+    padding: 20px;
+
+    background: var(--card-light);
+
     border: 1px solid var(--border);
-    border-radius: 10px;
-    transition: 0.3s ease;
+    border-radius: var(--radius);
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .item:hover {
-    border-color: #555;
-    background: #1b1b1b;
+    background: var(--card-hover);
+
+    border-color: var(--border-light);
+
+    transform: translateY(-3px);
 }
 
 .item-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 12px;
+
+    margin-bottom: 12px;
 }
 
 .item h3 {
-    color: white;
-    font-size: 17px;
+    color: var(--white);
+
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .tag {
-    color: #ccc;
+    padding: 5px 11px;
+
+    color: #d0d0d0;
+
     background: #202020;
-    border: 1px solid #393939;
+
+    border: 1px solid #3a3a3a;
     border-radius: 20px;
-    padding: 4px 10px;
+
     font-size: 10px;
     letter-spacing: 0.5px;
 }
 
-/* ===== SKILLS ===== */
+
+/* ===== 08. SKILLS ===== */
+
 .skill-list {
     display: flex;
     flex-wrap: wrap;
+
     gap: 10px;
-    margin-bottom: 14px;
+
+    margin-bottom: 16px;
 }
 
 .skill {
     display: inline-block;
-    color: #ddd;
+
+    padding: 8px 13px;
+
+    color: #dddddd;
+
     background: #191919;
-    border: 1px solid #353535;
+
+    border: 1px solid #363636;
     border-radius: 7px;
-    padding: 7px 12px;
+
     font-size: 12px;
-    transition: 0.3s ease;
+
+    transition: 0.25s ease;
 }
 
 .skill:hover {
     color: #080808;
-    background: white;
-    border-color: white;
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    transform: translateY(-2px);
 }
 
 .small-note {
     color: var(--muted) !important;
+
     font-size: 12px !important;
+    line-height: 1.8 !important;
 }
 
-/* ===== PERSONAL DETAILS ===== */
+
+/* ===== 09. PERSONAL INFORMATION ===== */
+
 .detail {
-    background: var(--surface);
+    padding: 15px 16px;
+
+    margin-bottom: 12px;
+
+    background: var(--card-light);
+
     border: 1px solid var(--border);
     border-radius: 9px;
-    padding: 13px 15px;
-    margin-bottom: 12px;
+
     overflow-wrap: anywhere;
-    transition: 0.3s ease;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .detail:hover {
-    border-color: #555;
-    transform: translateX(3px);
+    background: var(--card-hover);
+
+    border-color: var(--border-light);
+
+    transform: translateX(4px);
 }
 
 .detail .label {
-    color: #777;
+    color: #858585;
+
     font-size: 10px;
+    font-weight: bold;
+
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 4px;
+    letter-spacing: 1.7px;
+
+    margin-bottom: 5px;
 }
 
 .detail p:last-child {
-    color: #f1f1f1;
+    color: #eeeeee;
+
     font-size: 14px;
     font-weight: 600;
+
+    line-height: 1.7;
 }
 
-/* ===== HOBBIES ===== */
+
+/* ===== 10. HOBBIES ===== */
+
 .hobby {
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: var(--surface);
+
+    gap: 13px;
+
+    padding: 14px 16px;
+
+    margin-bottom: 11px;
+
+    color: #dddddd;
+
+    background: var(--card-light);
+
     border: 1px solid var(--border);
     border-radius: 9px;
-    padding: 12px 15px;
-    margin-bottom: 10px;
+
     font-size: 14px;
-    transition: 0.3s ease;
+
+    transition: 0.25s ease;
 }
 
 .hobby:hover {
-    background: #202020;
-    border-color: #555;
+    background: var(--card-hover);
+
+    border-color: var(--border-light);
+
+    transform: translateX(4px);
 }
 
 .hobby-dot {
     width: 7px;
     height: 7px;
+
     flex-shrink: 0;
-    background: white;
+
+    background: #ffffff;
+
     border-radius: 50%;
+
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
 }
 
-/* ===== FOOTER ===== */
+
+/* ===== 11. FOOTER ===== */
+
 footer {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px 45px;
+    gap: 12px;
+
+    padding: 22px 48px;
+
     background: #090909;
+
     border-top: 1px solid var(--border);
-    color: #666;
+
+    color: #777777;
+
     font-size: 10px;
+    font-weight: 600;
+
     letter-spacing: 2px;
 }
 
-/* ===== TABLET AND MOBILE ===== */
-@media (max-width: 700px) {
+footer span:first-child {
+    color: #eeeeee;
+}
+
+
+/* ===== 12. TABLET ===== */
+
+@media (max-width: 850px) {
+
+    .content-grid {
+        grid-template-columns: 1.4fr 1fr;
+
+        gap: 25px;
+
+        padding: 35px 30px;
+    }
+
+    .hero {
+        padding: 38px 30px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    footer {
+        padding: 20px 30px;
+    }
+}
+
+
+/* ===== 13. MOBILE ===== */
+
+@media (max-width: 650px) {
 
     body {
         padding: 15px 10px;
     }
 
     .resume {
-        border-radius: 10px;
+        border-radius: 11px;
     }
 
     .hero {
         flex-direction: column;
+
         text-align: center;
-        padding: 30px 22px;
-        gap: 22px;
+
+        gap: 25px;
+
+        padding: 35px 22px;
     }
 
     .profile-photo img {
-        width: 145px;
-        height: 175px;
+        width: 150px;
+        height: 180px;
     }
 
     .hero h1 {
-        font-size: 30px;
+        font-size: 31px;
+        letter-spacing: -0.8px;
+
         overflow-wrap: anywhere;
     }
 
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
     .accent-line {
-        margin: 18px auto;
+        margin: 20px auto;
+    }
+
+    .intro {
+        font-size: 13px;
     }
 
     .content-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 28px 22px;
+
+        gap: 35px;
+
+        padding: 30px 22px;
+    }
+
+    .section h2 {
+        font-size: 16px;
+    }
+
+    .item {
+        padding: 16px;
     }
 
     footer {
-        padding: 18px 22px;
         flex-direction: column;
+
         text-align: center;
+
+        padding: 20px;
     }
 }
 
-/* ===== PRINT ===== */
+
+/* ===== 14. SMALL MOBILE ===== */
+
+@media (max-width: 360px) {
+
+    body {
+        padding: 10px 7px;
+    }
+
+    .hero {
+        padding: 28px 16px;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .content-grid {
+        padding: 25px 16px;
+    }
+
+    .skill {
+        font-size: 11px;
+        padding: 7px 10px;
+    }
+
+    .item-top {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+/* ===== 15. PRINT ===== */
+
 @media print {
 
     body {
-        background: white;
-        color: #111;
         padding: 0;
+
+        color: #222222;
+        background: #ffffff;
     }
 
     .resume {
         max-width: 100%;
-        box-shadow: none;
+
         border: none;
+        border-radius: 0;
+
+        box-shadow: none;
     }
 
     .hero {
-        background: #111 !important;
+        background: #111111 !important;
+
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
+    }
+
+    .profile-photo img {
+        filter: none;
     }
 
     .content-grid {
         gap: 20px;
     }
 
-    .profile-photo img {
-        filter: none;
+    .item,
+    .detail,
+    .hobby {
+        break-inside: avoid;
+    }
+
+    .skill,
+    .tag {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
     }
 }
